@@ -1,0 +1,159 @@
+/* 
+  Responsive Web Design / Mobile FIRST: default for mobile phone screens 
+  i.e. smaller than 600px
+*/
+
+body {
+   background-color: blue;
+ }
+html {
+  color: #222;
+  font-size: 1.1em;
+  line-height: 1.2;
+}
+section {
+  background-color: #555;
+  border-color: rgb(177, 45, 45);
+  border-style: groove;
+  border-width: 15px;
+  padding-left: 10px;
+} 
+article{
+  background-color: #666;
+  border-style: inset;
+  border-color: rgb(177, 95, 95);
+  border-width: 1px;
+  padding-left: 15px;
+}
+article > section {
+  background-color: #555;
+  border-color: rgb(177, 95, 95);
+  border-style: dashed;
+  border-width: 2px;
+  padding-left: 20px;
+} 
+
+h1 {
+  font-size: 2.5em;
+}
+h2 {
+  font-size: 2.0em;
+}
+h3 {
+  font-size: 1.5em;
+}
+
+.the_header {
+  grid-area: h;
+  background-color: #444;
+}
+
+.the_navigation {
+  grid-area: n;
+  background-color: #222;
+}
+
+.the_main_area {
+  grid-area: m;
+  background-color: #EEE;
+  padding-bottom: 2.5rem;
+}
+
+.the_aside_region {
+  grid-area: a;
+  background-color: #888;
+}
+
+.the_footer {
+  grid-area: f;
+  background-color: #555;
+  text-align: center;
+  /* always at the bottom */
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 2.1rem;    
+}
+
+.left_spacer{
+  grid-area: l;
+  background-color: #FFF;
+}
+.right_spacer {
+  grid-area: r;
+  background-color: #FFF;
+}
+
+.the_body {
+  display: grid;
+  grid-gap: 2%;
+  grid-template-areas: 
+    "h"
+    "n"
+    "m"
+    "f";
+  grid-template-columns: 100%;
+  min-height: 95vh;
+}
+
+
+h3.warning {
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+
+
+ /* 
+   Responsive Web Design: Special Section larger screens 
+   i.e. larger than 600px
+ */ 
+/* On screens (or smaller browser windows on the screen) that are 600px or less */
+@media screen and (min-width: 600px) {
+   body {
+      background-color: green;
+    }
+    .the_body {
+      display: grid;
+      grid-gap: 2%;
+      grid-template-areas: 
+        "h h"
+        "n n"
+        "m a"
+        "f f"
+        ;
+      grid-template-columns: 80% 20%;
+    }
+    .right_spacer .left_spacer {
+      visibility: hidden;
+    }
+ }
+ 
+/* On default desktop screens that are 990px or more */
+@media screen and (min-width: 990px) {
+  body {
+     background-color: yellow;
+   }
+   .the_body {
+     display: grid;
+     grid-gap: 2%;
+     grid-template-areas: 
+       "l h h r"
+       "l n n r"
+       "l m a r"
+       "l f f r"
+       ;
+     grid-template-columns: auto 500px 100px auto ;
+   }
+}
+
+
+
+/* Task:
+
+  read https://gridbyexample.com 
+
+  then modify... 
+
+  finally, check if valid: e.g. https://jigsaw.w3.org/css-validator/validator 
+*/

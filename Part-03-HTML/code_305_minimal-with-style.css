@@ -1,0 +1,11 @@
+body {
+  /* open your browser and change the color
+     using the web inspector. It's live!
+     Then copy the value back to your css source file!
+  */
+  background-color: rgba(128, 128, 128, 0.15);
+  
+  /* Please, always check your stylesheets using a validator 
+    such as https://jigsaw.w3.org/css-validator/#validate_by_input 
+  */
+}

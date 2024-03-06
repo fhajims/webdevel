@@ -1,0 +1,23 @@
+{
+  "name": "webapp-wa",
+  "version": "1.0.0",
+  "description": "The web app",
+  "main": "index.html",
+  "scripts": {
+    "build": "node_modules/typescript/bin/tsc --build && npm run copyfiles",
+    "copyfiles": "cp -rf ./src/webapp/*.html ./dist/webapp/ && cp -rf ./src/webapp/*.ico ./dist/webapp/",
+    "monitor": "nodemon --watch ./src ts --exec npm run build --exec tree",
+    "start": "echo 'put on a server to host'",
+    "test": "echo \"Sorry: no test specified.\n\""
+  },
+  "author": "fhj",
+  "license": "ISC",
+  "dependencies": {
+    "tsc": "^2.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "nodemon": "^2.0.15",
+    "typescript": "^4.5.5"
+  }
+}

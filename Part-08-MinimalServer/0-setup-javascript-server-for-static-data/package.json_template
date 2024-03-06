@@ -1,0 +1,20 @@
+{
+  "name": "minimalserver",
+  "version": "1.0.0",
+  "description": "node web socket server app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js &",
+	"shutdown": "killall node"
+  },
+  "keywords": [
+    "ws",
+    "node"
+  ],
+  "author": "jf",
+  "license": "GPL-3.0-or-later ",
+  "dependencies": {
+    "config": "^3.3.1"
+  }
+}

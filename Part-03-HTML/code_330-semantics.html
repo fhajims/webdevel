@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Compare HTML with/without semantics</title>
+  </head>
+  <body>
+
+    <hr />
+    <!-- no semantic -->
+
+    <img src="images/logo.svg" />
+    <span><b>With no semantic information at all</b></span>
+    <div> 
+      <div> <a href="/" >Startseite</a> </div>
+      <div> <a href="#overview">Übersicht</a> </div> 
+    </div>
+  
+  
+    <hr />
+    <!-- a bit semantic -->
+
+    <img src="images/logo.svg" alt="Logo" title="Logo" width="80" height="25" />
+    <h2>With some semantic information</h2>
+    <nav> 
+     <ul> 
+      <li> <a href="/" >Startseite</a></li>
+      <li> <a href="#overview">Übersicht</a></li> 
+     </ul>
+    </nav>
+
+
+    <hr />
+    <!-- more semantic (and help for screenreaders)-->
+
+   
+    <section>
+      <header>
+        <img src="images/logo.svg" alt="Logo" title="Logo" width="80" height="25" /> 
+          <h2>With a lot semantic information</h2>
+        </header>   
+      <nav> 
+       <ul> 
+        <li> <a href="/" >Startseite</a></li>
+        <li> <a href="#overview">Übersicht</a></li> 
+       </ul>
+      </nav>
+     </section>
+     
+    <hr />
+        
+  </body>
+</html>

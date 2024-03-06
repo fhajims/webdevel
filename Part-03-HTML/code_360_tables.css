@@ -1,0 +1,25 @@
+body {
+  color: #222222;
+}
+
+table {
+  color: #FEFEFE;
+}
+table.holidayTripTable {
+  width: 100%;
+  border-width: 3px;
+  border-color: #ec2525;
+  color: #000000;
+  border-collapse: collapse;
+}
+
+table.holidayTripTable td, table.holidayTripTable th {
+  border-width: 3px;
+  border-color: #ec2525;
+  border-style: solid;
+  padding: 7px;
+}
+
+table.holidayTripTable thead {
+  background-color: #ec2525;
+}

@@ -1,0 +1,13 @@
+[Unit]
+Description=The Nice TypeScript Server
+After=network.target
+
+[Service]
+User=debian
+WorkingDirectory=/home/debian/ts-server-base/
+Environment=PORT=8080
+ExecStart=/usr/bin/node /home/debian/ts-server-base/app/
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

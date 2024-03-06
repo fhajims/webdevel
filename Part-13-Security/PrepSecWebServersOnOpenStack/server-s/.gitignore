@@ -1,0 +1,12 @@
+node_modules
+
+tmp
+dist
+
+# for this app
+log.txt
+log-*.txt
+
+### macOS ###
+.DS_Store
+

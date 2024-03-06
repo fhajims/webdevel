@@ -1,0 +1,46 @@
+/*
+ 
+ Improve!!
+
+*/
+
+
+/* Set style for some tags */
+body {
+  font-size: 1.2em;  
+}
+h1, h3 {
+  margin-left: 10%;
+}
+
+/* 
+  The articles in the section should be adjusted in 2, 3, 4, ... columns (on tablet or desktop) = our default
+
+  CSS Grid (within the width of the viewport set in the HTML code head meta tag viewport):
+    repeat columns for the grid with:
+      auto-fit (as many columns as possible) for "fluid" design with the with of each column of:
+      minmas sets minimal width to 210 px and maximal width to 1 fractional unit (fr)
+    we like enough white space (gap between the columns)
+      4 em ("ein m"), e.g the gap size depends on the size (of 4 "m"s = "mmmm") of the (paren) font size
+    
+  compare: https://css-tricks.com/responsive-grid-magazine-layout-in-just-20-lines-of-css/ 
+*/
+
+section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  grid-gap: 4em;
+}
+
+/* 
+
+  RWD media query set breakpoint at 640px
+
+  on smartphones, a single column should be ok
+*/
+@media (max-width: 639px) {
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+}

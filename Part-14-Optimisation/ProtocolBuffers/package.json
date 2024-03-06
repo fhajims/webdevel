@@ -1,0 +1,20 @@
+{
+  "name": "md5-cracking-generated",
+  "version": "1.0.0",
+  "description": "Minimal MD5 Cracking Demo with rRPC protocol buffers.",
+  "scripts": {
+    "start": "./4-cracking_client.js 'try again with another md5 hash as command line arg.'",
+    "server": "./3-cracking_server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "grpc-tools": "^1.11.2"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.6.2",
+    "google-protobuf": "^3.20.1-rc.1",
+    "minimist": "^1.2.6"
+  }
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Signup</title>
+  </head>
+  
+  <body>
+    <header>Register</header>
+    <nav><a href="/index.html">Home</a></nav>
+    <aside>Buy me!</aside>      
+    <main>
+      <section>
+        <h1>Sign up for the Green Camp Workshop</h1>
+        <form action="./code_351_forms_yaka-registration-confirmation.php" 
+              method="POST">
+          
+          Your Name: <input type="text" 
+                            name="name" 
+                            size="26" required  
+                            placeholder="maximilia@musterfrau.org" />
+          Your Website: <input  type="url" 
+                                name="website" 
+                                required pattern="https?://.+" />
+          Age: <input type="number"  
+                      name="age" 
+                      min="18" 
+                      max="99" 
+                      value="21" />
+          <br />
+          Knowledge in Web Technologies (-3...+3): <input type="range" name="knowhow" min="-3" max="3" value="1" />
+ 
+          <p><button>I would like to register</button></p>
+        </form>
+      </section>
+     </main>
+  
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "minimalwebsocketserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node server.js"
+  },
+  "author": "jf",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^14.14.35",
+    "@types/ws": "^7.4.0",
+    "ws": "^7.4.4"
+  }
+}

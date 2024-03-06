@@ -1,0 +1,38 @@
+<html>
+<body onload="init();">
+CANVAS:	
+<canvas id="myITMCanvas" width="100" height="200"></canvas>
+<a href="javascript:stopDrawing();">Stop Drawing!</a>
+</body>
+
+<script>
+ 	var context;
+var x=40;
+ 	var y=50;
+ 	var tmr;
+ 	
+
+
+ 	function init(){
+ 		theCanvas=document.getElementById("myITMCanvas");
+ 		context= theCanvas.getContext('2d');
+ 		tmr=setInterval(drawOnCanvas,35);	
+ 	}
+ 	function stopDrawing(){
+ 		clearInterval(tmr);
+ 	}
+ 	// see also demo on:
+ 	// http://sixrevisions.com/html/bouncing-a-ball-around-with-html5-and-javascript/
+ 	function drawOnCanvas(){
+ 		x+=2;y+=3;
+ 		if (x>100) x=0;
+ 		if (y>200) y=0;
+		context.fillStyle="#00ffff";
+		  // circle of radius 12 at the coordinates 40,50 on the canvas
+		context.arc(x,y,12,0,Math.PI*2,true);
+		context.closePath();
+		context.fill();
+ 	}
+	
+ </script>
+</html>

@@ -1,0 +1,19 @@
+# http://www.robotstxt.org/
+
+# find an extensive example on
+# https://en.wikipedia.org/robots.txt 
+
+# Note: Rename this file to "robots.txt"
+#       and put it in your base folder on the server
+
+# Allow crawling of all content
+User-agent: *
+Disallow: /admin/
+Disallow: /tmp
+
+# Another example:
+# You might 
+# restrict crawling of you web service APIs, but
+# allow single special urls  
+Allow: /api/rest_v1/?doc
+Disallow: /api/

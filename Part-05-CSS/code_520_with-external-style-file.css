@@ -1,0 +1,62 @@
+/*
+ 
+ Improve!!
+
+*/
+
+
+/* Set style for some tags */
+body {
+  font-size: 1.2em;  
+}
+
+body {
+  display: grid;
+  grid-gap: 2%;
+  grid-template-areas: 
+    "l h r"
+    "l m r";
+}
+.left {
+  grid-area: l;
+}
+.the_header {
+  width: 350px;
+  grid-area: h;
+}
+.the_main_area {
+  width: 350px;
+  grid-area: m;
+  background-color: #EEE;
+}
+.right {
+  grid-area: r;
+}
+header {
+  font-size: 2em;
+}
+
+h1, h3{
+  text-align: center;
+  margin: 10px;
+}
+h1 {
+  font-size: 1.1em;
+}
+
+/* Set style for some class attributes */
+.tux {
+  height: 6em;
+}
+.subtitle{
+  text-align:center;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color:red;
+}
+
+/* Set style for selected id */
+
+#boss{
+  height: 8em;
+}

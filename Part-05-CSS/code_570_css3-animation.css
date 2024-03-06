@@ -1,0 +1,45 @@
+.tux {
+  /* transition: <property> <duration>   <ease>       <delay> */
+  transition:    transform     300ms   ease-in-out       0s;
+  /* background: ... usw. usf. */
+}
+
+.tux:hover {
+  /* transform: <function>
+        e.g.: translate,         rotate,      scale, ...  skey,   ....
+  */
+  transform: translate(1px,0px) rotate(3deg) scale(1.2);
+}
+#boss {
+  height: 14em;
+  
+  /* animation: <keyframesname>    
+                <duration> 
+                <timing-function>  
+                <delay>
+                <iteration-count>  
+                <direction>
+                <fill-mmode>       
+                <play-state>;
+  */
+  animation:  strech 
+              7s 
+              ease-in-out 
+              0.5s
+              infinite
+              reverse;
+}
+
+/*
+  keyframe-animation: from <style> to <style>
+  optinal specify: until/from-to in %
+*/
+@keyframes strech {
+  from { height: 14em;
+         /* background: yellow; */
+       }
+  73%  { height:11em;}
+  to   { height: 14em;
+         /* background: blue; */
+      }
+}

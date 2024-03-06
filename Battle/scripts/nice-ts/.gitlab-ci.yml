@@ -1,0 +1,55 @@
+# set in GitLab via web interface
+#     Settings / CI-CD Variables 
+#     e.g. (depends on your team) for nice server ip:
+# SSH_SERVER to 10.77.23.219
+# SSH_PORT to 22
+# SSH_USERNAME to debian
+#
+#   ouput your private key as text
+#	cat ~/.ssh/id_ed25519_Team-C
+#	-----BEGIN OPENSSH PRIVATE KEY-----
+#   b3BlbnNzaC1....Ebm9uZ...tzc2gtZW
+#   ....
+#   QyNTUxOQAA....XWaIgmA72mIn+9v7ObAU=
+#   -----END OPENSSH PRIVATE KEY-----
+#
+# SSH_PRIVATEKEY to the text above.
+
+
+
+
+before_script:
+   - 'which ssh-agent || ( apk update && apk add openssh )'
+   - eval $(ssh-agent -s)
+   - mkdir -p ~/.ssh
+   - chmod 700 ~/.ssh
+   - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_ed25519
+   - chmod 600 ~/.ssh/id_ed25519
+   # For debugging, just call any Linux command to output info you need: 
+   - ls -al ~/.ssh/
+
+stages:          # List of stages for jobs, and their order of execution
+#  - build       # TODO: Add build stage as dependency for test
+#  - test        # TODO: Add test stage as dependendy for deploy
+  - deploy
+
+deploy-job:      
+  stage: deploy  # run in deply stage, i.e. when build and test was successful
+  image: alpine  # docker should run the git pipeline commands using image 'alpine'
+  tags:
+    - edu        # trigger the gitlab runner tagged with 'edu' 
+  script:
+    - echo "Deploying a file on a remote server. By ${CI_COMMIT_AUTHOR}..."
+    - echo "user=${SSH_USERNAME}, server=${SSH_SERVER}, port=${SSH_PORT}"
+    - echo "just for fun, we add a demo directory on the target server"
+    - '/usr/bin/ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no  -i ~/.ssh/id_ed25519 ${SSH_USERNAME}@${SSH_SERVER} mkdir -p /home/debian/demo'
+    - echo "listing the current directory"
+    - pwd
+    - ls -al
+    # - ls -al nice-ts
+    # - '/usr/bin/scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -P ${SSH_PORT} -i ~/.ssh/id_ed25519  nice-ts/dist/app/index.js ${SSH_USERNAME}@${SSH_SERVER}:/home/debian/ts-server-base/dist/app/index.js'
+    # - '/usr/bin/ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no  -i ~/.ssh/id_rsa_nice ${SSH_USERNAME}@${SSH_SERVER} sudo systemctl restart niceserver.service'
+    # - echo "The server was successfully replaced and systemd service restarted."
+  only:          # trigger this job only if text "Deploy Nice Server" is part of your commit message 
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /Deploy Nice Server/

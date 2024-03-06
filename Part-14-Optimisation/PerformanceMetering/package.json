@@ -1,0 +1,18 @@
+{
+  "name": "performance-metering-demo",
+  "version": "1.0.0",
+  "description": "Performance Metering",
+  "scripts": {
+    "monitor-code-changes-and-compile": "nodemon -e ts --exec node_modules/typescript/bin/tsc webapp/*.ts",
+    "serve": "python3 -m http.server 8000 --directory webapp"
+  },
+  "author": "fhj",
+  "license": "ISC",
+  "dependencies": {
+    "tsc": "^2.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "typescript": "^4.5.5"
+  }
+}

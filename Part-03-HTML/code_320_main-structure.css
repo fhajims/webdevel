@@ -1,0 +1,77 @@
+ /* Responsive Web Design: default = settings for smartphone screens */ 
+ 
+.the_header {
+  grid-area: h;
+  background-color: #444;
+}
+
+.the_navigation {
+  grid-area: n;
+  background-color: #222;
+}
+
+.the_main_area {
+  grid-area: m;
+  background-color: #EEE;
+}
+
+.the_aside_region {
+  grid-area: a;
+  background-color: #888;
+}
+
+.the_footer {
+  grid-area: f;
+  background-color: #555;
+}
+
+
+.the_body {
+  display: grid;
+  grid-gap: 2%;
+  grid-template-areas: 
+    "h h h"
+    "n n n"
+    "m m a"
+    "f f f";
+}
+
+
+
+/* 
+  Responsive Web Design / Mobile FIRST: default for mobile phone screens 
+  i.e. smaller than 600px
+*/
+
+body {
+   background-color: blue;
+ }
+
+ /* 
+   Responsive Web Design: Special Section larger screens 
+   i.e. larger than 600px
+ */ 
+/* On screens (or smaller browser windows on the screen) that are 600px or less */
+@media screen and (min-width: 600px) {
+   body {
+      background-color: green;
+    }
+ }
+ 
+/* On default desktop screens that are 990px or more */
+@media screen and (min-width: 990px) {
+  body {
+     background-color: yellow;
+   }
+}
+
+
+
+/* Task:
+
+  read https://gridbyexample.com 
+
+  then modify... 
+
+  finally, check if valid: e.g. https://jigsaw.w3.org/css-validator/validator 
+*/
